@@ -10,4 +10,5 @@ which in turn triggers the camera to take a photo of her. This is achieved by wr
 Python script on the Raspberry Pi. 
 
 Once the cat has been detected and a photo has been taken, the data is sent to the Web API 
-platform "Wia" which shows the data as an "Event".  
+platform "Wia" which shows the data as an "Event". This Event can be viewed as a jpg image in the Events tab. As well as receiving a Photo an email notification is also sent to 
+the User's email address.   
