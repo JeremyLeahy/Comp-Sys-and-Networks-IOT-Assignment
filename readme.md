@@ -15,3 +15,5 @@ the Events Tab. As well as receiving a Photo an email notification is also sent 
 email address notifying the USER that the Raspberry Pi has detected motion. This is achieved 
 using a "Flow" in Wia linking the Trigger which is the Motion Detected Event, with the Action
 which is sending the email. 
+
+catflap.jpg
