@@ -11,12 +11,10 @@ camera = PiCamera()
 pir = MotionSensor(7)
 
 
-def motionDetected():
-    print("Motion Detected")
-    takePhoto()
-
 ## defining takePhoto method
 def takePhoto():
+    camera.start_preview()
+    time.sleep(1)
     camera.capture('/home/pi/image.jpg')
     time.sleep(5)
     sendToWiaPlatform()
@@ -25,7 +23,11 @@ def takePhoto():
 def sendToWiaPlatform():
     wia.Event.publish(name='motionDetected', file=open('/home/pi/image.jpg', 'rb'))
 
+##Delay initially set to allow motion sensor to initialize and learn environment
+time.sleep(30)
+
 while True:
+    time.sleep(3)
     pir.wait_for_motion()
     print("Motion Detected")
     takePhoto() 
